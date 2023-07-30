@@ -2,7 +2,7 @@
   "name": "rentalx-server",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/aristidesquetajr/rentalx-server.git",
+  "repository": "https://github.com/aristidesquetajr/rentx-server.git",
   "author": "Aristides Pascoal Queta <aristidesquetajr@gmail.com>",
   "license": "MIT",
   "scripts": {
