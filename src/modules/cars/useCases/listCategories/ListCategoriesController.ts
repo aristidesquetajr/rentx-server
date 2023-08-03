@@ -1,6 +1,6 @@
-import { Request, Response } from "express"
-import { ListCategoriesUseCase } from "./ListCategoriesUseCase"
+import { Request, Response } from 'express'
 
+import { ListCategoriesUseCase } from './ListCategoriesUseCase'
 
 class ListCategoriesController {
   constructor(private listCategoriesUseCase: ListCategoriesUseCase) {}

@@ -1,5 +1,6 @@
 import { parse } from 'csv-parse'
 import fs from 'fs'
+
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository'
 
 interface IImportCategory {
@@ -7,7 +8,7 @@ interface IImportCategory {
   description: string
 }
 class ImportCategoryUseCase {
-  constructor(private categoryRepository: ICategoriesRepository) { }
+  constructor(private categoryRepository: ICategoriesRepository) {}
 
   loadCategory(file: Express.Multer.File): Promise<IImportCategory[]> {
     return new Promise((resolve, reject) => {
@@ -19,19 +20,19 @@ class ImportCategoryUseCase {
       stream.pipe(fileParse)
 
       fileParse
-        .on("data", async (line) => {
+        .on('data', async (line) => {
           const [name, description] = line
 
           categories.push({
             name,
-            description
+            description,
           })
         })
-        .on("end", () => {
+        .on('end', () => {
           fs.promises.unlink(file.path)
           resolve(categories)
         })
-        .on("error", (err) => {
+        .on('error', (err) => {
           fs.promises.unlink(file.path)
           reject(err)
         })
@@ -46,10 +47,10 @@ class ImportCategoryUseCase {
 
       const existCategory = this.categoryRepository.findByName(name)
 
-      if(!existCategory) {
+      if (!existCategory) {
         this.categoryRepository.create({
           name,
-          description
+          description,
         })
       }
     })

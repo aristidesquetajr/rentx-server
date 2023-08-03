@@ -16,7 +16,6 @@
   "rules": {
     "camelcase": "off",
     "prettier/prettier": "error",
-    "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -35,13 +34,6 @@
     "no-useless-constructor": "off",
     "no-empty-function": "off",
     "lines-between-class-members": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ],
     "import-helpers/order-imports": [
       "warn",
       {
@@ -54,10 +46,5 @@
       "error",
       { "devDependencies": ["**/*.spec.js"] }
     ]
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
   }
 }
