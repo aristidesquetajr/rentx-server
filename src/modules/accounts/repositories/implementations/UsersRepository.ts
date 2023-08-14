@@ -9,13 +9,11 @@ class UsersRepository implements IUsersRepository {
     driver_licence,
     email,
     password,
-    username,
   }: ICreateUserDTO): Promise<void> {
     const user = new User()
 
     Object.assign(user, {
       name,
-      username,
       password,
       email,
       driver_licence,

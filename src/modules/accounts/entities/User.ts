@@ -5,11 +5,9 @@ class User {
 
   name: string
 
-  username: string
+  email: string
 
   password: string
-
-  email: string
 
   driver_licence: string
 

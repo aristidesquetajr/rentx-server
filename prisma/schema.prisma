@@ -28,9 +28,8 @@ model Specification {
 model User {
   id             String   @id @default(uuid())
   name           String
-  username       String   @unique
-  password       String
   email          String
+  password       String
   driver_licence String
   isAdmin        Boolean  @default(false)
   created_at     DateTime @default(now())
