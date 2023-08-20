@@ -32,6 +32,7 @@ model User {
   password       String
   driver_licence String
   isAdmin        Boolean  @default(false)
+  avatar         String?
   created_at     DateTime @default(now())
 
   @@map("users")

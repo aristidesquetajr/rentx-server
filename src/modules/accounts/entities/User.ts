@@ -13,6 +13,8 @@ class User {
 
   isAdmin: boolean
 
+  avatar?: string
+
   created_at: Date
 
   constructor() {

@@ -1,5 +1,6 @@
 import { prisma } from '../../../../database'
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO'
+import { IUpdateAvatarDTO } from '../../dtos/IUpdateAvatarDTO'
 import { User } from '../../entities/User'
 import { IUsersRepository } from '../IUsersRepository'
 
@@ -42,6 +43,17 @@ class UsersRepository implements IUsersRepository {
     })
 
     return user
+  }
+
+  async updateAvatar({ id, avatar }: IUpdateAvatarDTO): Promise<void> {
+    await prisma.user.update({
+      data: {
+        avatar,
+      },
+      where: {
+        id,
+      },
+    })
   }
 }
 
